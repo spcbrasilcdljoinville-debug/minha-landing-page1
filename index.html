@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checklist · 13º Encontro Regional de Vendas</title>
+<style>
+:root{--bg:#f3f5fa;--card:#fff;--ink:#16213a;--mut:#5d6b85;--line:#dde3ef;--navy:#0b2a5b;--acc:#f28c28;--todo:#8791a5;--doing:#d99a00;--done:#2e9e5b;--cancel:#d64545;--soft:#eef2fa;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0e1424;--card:#172038;--ink:#e8edf8;--mut:#9aa8c4;--line:#2a3654;--soft:#1e2943;--todo:#9aa3b8}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0e1424;--card:#172038;--ink:#e8edf8;--mut:#9aa8c4;--line:#2a3654;--soft:#1e2943;--todo:#9aa3b8}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.hero{background:linear-gradient(135deg,#0b2a5b,#16498f 70%,#1d5fb8);color:#fff;padding:28px 16px 24px}
+.w{max-width:900px;margin:0 auto}
+.kick{font-size:12px;letter-spacing:.14em;font-weight:700;color:#ffc27a}
+h1{font-size:clamp(22px,5vw,34px);line-height:1.15;margin:6px 0 8px}
+.hero p{margin:0 0 14px;opacity:.9;max-width:640px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.pill{background:rgba(255,255,255,.14);border-radius:999px;padding:6px 12px;font-size:13px}
+.pill.o{background:var(--acc);color:#1b1200;font-weight:700}
+.sp{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.sp div{background:rgba(255,255,255,.12);border-left:4px solid var(--acc);border-radius:8px;padding:10px 12px}
+.sp b{display:block}.sp span{font-size:13px;opacity:.9}
+.ap{margin-top:12px;font-size:12px;opacity:.85}
+main{max-width:900px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.how h3,.who h3{margin:0 0 8px;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.steps div{background:var(--soft);border-radius:10px;padding:10px 12px;font-size:14px}
+.steps b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;margin-right:6px}
+.who.shake{animation:sh .4s;border-color:var(--cancel)}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.names button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 16px;font:inherit;cursor:pointer}
+.names button.on{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:700}
+.sub{font-size:13px;color:var(--mut);margin-top:6px}
+.bar{height:12px;background:var(--soft);border-radius:99px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;background:var(--done);transition:width .3s}
+.sumtop{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sumtop b{font-size:22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.chips button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.chips button.on{background:var(--acc);border-color:var(--acc);color:#1b1200;font-weight:700}
+.et h2{display:flex;justify-content:space-between;font-size:16px;margin:20px 0 8px;color:var(--navy);border-bottom:2px solid var(--acc);padding-bottom:4px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .et h2{color:#9cc0ff}}
+:root[data-theme="dark"] .et h2{color:#9cc0ff}
+.et h2 span{font-size:13px;color:var(--mut);font-weight:400}
+.row{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--todo);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.row.doing{border-left-color:var(--doing)}.row.done{border-left-color:var(--done)}.row.cancel{border-left-color:var(--cancel)}
+.row.done .tt,.row.cancel .tt{color:var(--mut)}.row.done .tt{text-decoration:line-through}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.tt{font-weight:600;flex:1 1 320px}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+.late{color:var(--cancel);font-weight:700}
+select,.mot{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:5px 8px}
+.btns{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin-top:8px}
+.b{border:1.5px solid var(--line);background:var(--card);color:var(--mut);border-radius:8px;padding:7px 6px;font:inherit;font-size:13px;cursor:pointer}
+.b.todo.on{background:var(--todo);border-color:var(--todo);color:#fff}
+.b.doing.on{background:var(--doing);border-color:var(--doing);color:#fff}
+.b.done.on{background:var(--done);border-color:var(--done);color:#fff}
+.b.cancel.on{background:var(--cancel);border-color:var(--cancel);color:#fff}
+.b:disabled{opacity:.5;cursor:not-allowed}
+.mot{width:100%;margin-top:8px;border-color:var(--cancel)}
+.warn{color:var(--cancel);font-size:12px;margin-top:4px}
+.by{font-size:12px;color:var(--mut);margin-top:6px}
+.ban{background:#fff4d6;color:#5c4300;border:1px solid #f0d28a;border-radius:10px;padding:10px 12px;margin-bottom:14px;font-size:14px}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#16213a;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90%}
+#toast.s{opacity:1}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:10px 16px 30px}
+</style></head><body>
+<header class="hero"><div class="w">
+<div class="kick">CDL JOINVILLE · 13º ENCONTRO REGIONAL DE VENDAS</div>
+<h1>Da loja física à loja online</h1>
+<p>Uma noite para se atualizar, trocar experiências e descobrir novas estratégias para vender mais. Este é o checklist de acompanhamento do time organizador.</p>
+<div class="pills"><span class="pill">📅 03 de novembro · 19h</span><span class="pill">📍 CDL Joinville – Rua Jaguaruna, 147, Centro</span><span class="pill o" id="dias"></span></div>
+<div class="sp"><div><b>Alexandre Weimer</b><span>🤖 IA na prática para vender mais</span></div><div><b>Dino Gueno</b><span>🛍️ A loja física que vende</span></div></div>
+<div class="ap">Realização CDL Joinville · Apoio Sicredi, Sindilojas Joinville e Região e Sebrae</div>
+</div></header>
+<main>
+<div class="card how"><h3>Como preencher (leva 10 segundos)</h3>
+<div class="steps"><div><b>1</b>Toque no seu nome logo abaixo.</div><div><b>2</b>Em cada tarefa, toque na situação: A fazer, Em andamento, Concluída ou Cancelada.</div><div><b>3</b>Se cancelar, escreva o motivo no campo vermelho que aparece.</div></div>
+<div class="sub">Tudo é salvo sozinho e aparece para o time inteiro. Também dá para trocar o responsável de uma tarefa.</div></div>
+<div id="ban"></div>
+<div class="card who" id="who"><h3>Quem é você?</h3><div class="names" id="names"></div><div class="sub">Seu nome fica registrado em cada atualização que você fizer.</div></div>
+<div class="card" id="sum"></div>
+<div class="chips" id="chips"></div>
+<div id="list"></div>
+</main>
+<footer>Prazos calculados de trás para frente a partir de 03/11. Ajustem o que for preciso com o time.</footer>
+<div id="toast"></div>
+<script>
+const TEAM=["Sophia","Isabella","Julia","Adriano","Alberto"];
+const ET=["1. Definições e contratos","2. Inscrições e ingressos","3. Marketing e divulgação","4. Conteúdo e cerimonial","5. Estrutura e logística","6. Coffee e alimentação","7. Brindes e apoiadores","8. Equipe e dia do evento","9. Levar no dia (03/11)","10. Pós-evento"];
+const T=[
+[0,"Confirmar data, horário e local (03/11, 19h, CDL Joinville)","10-14"],
+[0,"Confirmar palestrantes Alexandre Weimer e Dino Gueno: ordem, tempo de fala e necessidades técnicas","10-16"],
+[0,"Contratos dos palestrantes assinados (jurídico CDL)","10-16"],
+[0,"Formalizar apoio de Sicredi, Sindilojas e Sebrae com contrato","10-16"],
+[0,"Definir destaque dos apoiadores (logos, brindes, citações), sem destacar um apoiador menos importante acima do principal","10-20"],
+[0,"Definir cerimonialista e fazer briefing (texto decorado, chegada antecipada, ensaio)","10-19"],
+[0,"Definir se a Eventiza será usada novamente","10-16"],
+[1,"Conferir página do Sympla (descrição, valor, lotes e link ativo)","10-14"],
+[1,"Acompanhar inscrições e definir meta de público x capacidade do auditório","10-20"],
+[1,"Formulário ativo e coleta do WhatsApp dos inscritos para a pesquisa pós-evento","10-20"],
+[1,"Brinde para a primeira inscrição","10-20"],
+[1,"Lista de convidados (autoridades, apoiadores, imprensa) com confirmação de presença","10-27"],
+[1,"Lista final de participantes e teste do QR code do check-in","10-30"],
+[2,"Apresentação institucional CDL e cotas de apoio atualizadas","10-16"],
+[2,"Artes de WhatsApp (convite, lembrete, contagem regressiva)","10-16"],
+[2,"E-mail marketing, banner no site, notícia e pop-up","10-16"],
+[2,"Posts e stories de redes sociais","10-20"],
+[2,"Vídeos teaser com palestrantes e apoiadores","10-23"],
+[2,"Release para a imprensa","10-16"],
+[2,"Panfleto físico e digital","10-20"],
+[2,"Artes de pulseira, sacola e folder","10-20"],
+[2,"Logo no púlpito","10-27"],
+[2,"Cobertura (foto/vídeo) e foto do time antes do evento","10-27"],
+[3,"Mídias e roteiro do cerimonial prontos (15 dias antes)","10-19"],
+[3,"Receber as apresentações dos palestrantes em PDF ou imagem e testar","10-27"],
+[3,"Definir atração de abertura (roleta, stand-up, coral ou Sheik no palco)","10-16"],
+[3,"Playlist para os intervalos entre quem sobe ao palco","10-27"],
+[3,"Placas de tempo de palestra (FALTAM 10 MIN / 5 MIN / ACABOU SEU TEMPO)","10-30","Adriano"],
+[3,"Telão com QR code de avaliação do evento","10-30"],
+[4,"Confirmar uso do auditório CDL e definir layout (cadeiras, coffee, recepção)","10-16","Adriano"],
+[4,"Som, microfones, notebook e passador: ver o que o auditório já oferece","10-23"],
+[4,"Telão/painel de LED, praticável e black drop, se necessários","10-23","Adriano"],
+[4,"Ar-condicionado ligado durante a montagem","11-02","Adriano"],
+[4,"Estacionamento próximo (liberação até 22h30) e 2 pessoas de apoio","10-23","Adriano"],
+[4,"Pulseiras/fitas de controle de entrada e saída","10-23","Adriano"],
+[4,"Mesa da recepção dos convidados","10-30","Adriano"],
+[4,"Lixeiras suficientes","10-30","Adriano"],
+[4,"Sinalização: 'NÃO ENTRAR COM COMIDA/BEBIDA', fita zebrada e placas","10-30","Adriano"],
+[4,"Limpeza: alinhar retirada de lixo, papel higiênico e presença até o fim","10-27","Adriano"],
+[4,"Camarim dos palestrantes (planta, bandeja, bebida e alimentação)","10-30"],
+[4,"Montagem e teste técnico na véspera (som, projeção, QR code, extensões)","11-02","Adriano"],
+[5,"Cardápio e patrocínio do coffee","10-20"],
+[5,"Revisar salgados e complementos (os assados sobraram em 2025)","10-20"],
+[5,"Garantir guardanapos e 2 tipos de refrigerante","10-27"],
+[5,"Combinar com a padaria 2 pessoas para arrumar o coffee","10-27"],
+[5,"Time comer antes do evento","11-03"],
+[6,"Definir brindes da roleta e solicitar a Sicredi e Sindilojas","10-16"],
+[6,"Brinde melhor (kit churrasco) e vale-brindes de associados embaixo das cadeiras","10-20"],
+[6,"Sacolas e folders: modelo menor e com mais brindes","10-23"],
+[6,"Termo de adesão, folder de Natal e pranchetas","10-27"],
+[6,"Campanha de Natal com condição diferenciada para participantes","10-27"],
+[7,"Fechar escala por posto (estacionamento, recepção, auditório, coffee, roleta, palco, coringas)","10-23"],
+[7,"Equipe de 5 até o final (1 no palco, 1 na recepção, desmontagem)","10-23"],
+[7,"E-mail geral ao time com programação, funções e uniforme (calça preta, camisa social CDL, crachá)","10-27"],
+[8,"Sacolas/folders, tesoura, fita zebrada, extensão, régua e fita transparente","11-02"],
+[8,"Presentes de Natal e letreiro CDL","11-02"],
+[8,"Notebook, passador e microfone","11-02"],
+[8,"Roleta e brindes (com aviso ESGOTADO)","11-02"],
+[8,"Termo de adesão, folder de Natal e prancheta","11-02"],
+[8,"Placas RESERVADO e de tempo de palestra","11-02"],
+[8,"Cone, corrente e fitas/pulseiras de entrada","11-02"],
+[8,"Lista de participantes impressa e QR codes testados","11-02"],
+[8,"Apresentação e vídeo institucional CDL","11-02"],
+[8,"Folha de porta, guardanapos, lixeiras e papel higiênico","11-02"],
+[8,"Uniforme (calça preta e camisa social CDL) e crachá","11-02"],
+[9,"Pesquisa de satisfação (QR code e WhatsApp dos inscritos)","11-05"],
+[9,"Agradecer palestrantes, apoiadores e participantes e enviar fotos","11-06"],
+[9,"Matéria e posts de cobertura pós-evento","11-06"],
+[9,"Reunião de balanço e lista de melhorias para 2027","11-13"]
+];
+const TASKS=T.map((r,i)=>({id:"t"+i,e:r[0],t:r[1],d:new Date(2026,+r[2].slice(0,2)-1,+r[2].slice(3)),o:r[3]||""}));
+const ST={todo:["○","A fazer"],doing:["◐","Em andamento"],done:["✔","Concluída"],cancel:["✕","Cancelada"]};
+let S={},db=null,me="",RO=false,filter="all",editing=false;
+try{me=localStorage.getItem("me")||""}catch(e){}
+const $=s=>document.querySelector(s);
+function h(tag,p,...k){const e=document.createElement(tag);for(const a in p||{}){if(a==="class")e.className=p[a];else if(a.startsWith("on"))e[a]=p[a];else e[a]=p[a]}k.flat().forEach(x=>e.append(x));return e}
+const get=t=>S[t.id]||{status:"todo",owner:t.o};
+const p2=n=>String(n).padStart(2,"0");
+const fd=d=>p2(d.getDate())+"/"+p2(d.getMonth()+1);
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("s");setTimeout(()=>t.classList.remove("s"),2600)}
+function nudge(){const w=$("#who");w.classList.remove("shake");void w.offsetWidth;w.classList.add("shake");w.scrollIntoView({behavior:"smooth",block:"center"});toast("Primeiro toque no seu nome")}
+function save(t,p){
+ if(RO)return;if(!me){nudge();return}
+ const n={...get(t),...p,by:me,at:Date.now()};S[t.id]=n;render();
+ if(db)db.collection("tasks").doc(t.id).set(n).catch(()=>toast("Não deu para salvar. Tente de novo."));
+}
+function row(t){
+ const s=get(t),st=s.status,today=new Date().setHours(0,0,0,0);
+ const late=(st==="todo"||st==="doing")&&t.d<today;
+ const sel=h("select",{disabled:RO,onchange:e=>save(t,{owner:e.target.value})},h("option",{value:""},"Sem responsável"),TEAM.map(n=>h("option",{value:n},n)));
+ sel.value=s.owner||"";
+ const r=h("div",{class:"row "+st},
+  h("div",{class:"top"},h("div",{class:"tt"},t.t),h("div",{class:"meta"},h("span",{class:late?"late":""},(late?"⚠ Prazo vencido · ":"Prazo ")+fd(t.d)),sel)),
+  h("div",{class:"btns"},Object.keys(ST).map(k=>h("button",{class:"b "+k+(k===st?" on":""),disabled:RO,onclick:()=>save(t,{status:k,motivo:k==="cancel"?(s.motivo||""):""})},ST[k][0]+" "+ST[k][1]))));
+ if(st==="cancel"){
+  const m=h("input",{class:"mot",type:"text",maxLength:200,placeholder:"Motivo do cancelamento (obrigatório)",value:s.motivo||"",disabled:RO,
+   onfocus:()=>{editing=true},onkeydown:e=>{if(e.key==="Enter")e.target.blur()},
+   onblur:e=>{editing=false;const v=e.target.value.trim();if(v!==(s.motivo||""))save(t,{motivo:v});else render()}});
+  r.append(m);if(!s.motivo)r.append(h("div",{class:"warn"},"Falta escrever o motivo."));
+ }
+ if(s.by)r.append(h("div",{class:"by"},"Atualizado por "+s.by+" · "+fd(new Date(s.at))+" "+p2(new Date(s.at).getHours())+":"+p2(new Date(s.at).getMinutes())));
+ return r;
+}
+function render(){
+ if(editing)return;
+ $("#names").replaceChildren(...TEAM.map(n=>h("button",{class:n===me?"on":"",onclick:()=>{me=n;try{localStorage.setItem("me",n)}catch(e){}render()}},n)));
+ const c={todo:0,doing:0,done:0,cancel:0};TASKS.forEach(t=>c[get(t).status]++);
+ const base=TASKS.length-c.cancel,pc=base?Math.round(c.done/base*100):0;
+ $("#sum").replaceChildren(h("div",{class:"sumtop"},h("b",{},pc+"% concluído"),h("span",{class:"sub"},c.done+" concluídas · "+c.doing+" em andamento · "+c.todo+" a fazer · "+c.cancel+" canceladas")),h("div",{class:"bar"},h("i",{style:"width:"+pc+"%"})));
+ const mine=TASKS.filter(t=>me&&get(t).owner===me).length;
+ const F=[["all","Todas",TASKS.length],["todo","○ A fazer",c.todo],["doing","◐ Em andamento",c.doing],["done","✔ Concluídas",c.done],["cancel","✕ Canceladas",c.cancel],["mine","Minhas",mine]];
+ $("#chips").replaceChildren(...F.map(f=>h("button",{class:f[0]===filter?"on":"",onclick:()=>{filter=f[0];render()}},f[1]+" ("+f[2]+")")));
+ const L=$("#list");L.replaceChildren();
+ ET.forEach((n,i)=>{
+  const all=TASKS.filter(t=>t.e===i);
+  const ts=all.filter(t=>filter==="all"||(filter==="mine"?get(t).owner===me:get(t).status===filter));
+  if(!ts.length)return;
+  const dn=all.filter(t=>get(t).status==="done").length,tot=all.filter(t=>get(t).status!=="cancel").length;
+  L.append(h("section",{class:"et"},h("h2",{},n,h("span",{},dn+" de "+tot+" concluídas")),ts.map(row)));
+ });
+ if(!L.children.length)L.append(h("div",{class:"card sub"},"Nenhuma tarefa neste filtro."));
+}
+function ban(m){$("#ban").replaceChildren(h("div",{class:"ban"},m))}
+const dd=Math.ceil((new Date(2026,10,3,19)-new Date())/864e5);
+$("#dias").textContent=dd>1?"⏳ Faltam "+dd+" dias":dd===1?"⏳ É amanhã!":dd===0?"🎉 É hoje!":"Evento realizado";
+render();
+(async()=>{
+ const C=window.claude;
+ if(C&&C.use){
+  try{const u=await C.use("user");if(u&&u.can&&u.can("data.write")===false){RO=true;ban("Você está com acesso só para leitura. Peça ao Alberto permissão de edição para atualizar as tarefas.")}}catch(e){}
+  try{db=await C.use("db")}catch(e){}
+ }
+ if(!db){if(!RO)ban("Atenção: as alterações não estão sendo salvas para o grupo. Abra o link oficial do documento para atualizar junto com o time.");render();return}
+ db.collection("tasks").onSnapshot(sn=>{const n={};sn.docs.forEach(d=>n[d.id]=d.data());S=n;render()},()=>ban("Não foi possível carregar os dados salvos. Recarregue a página."));
+ render();
+})();
+</script></body></html>
